@@ -25,11 +25,11 @@ pipeline {
 
         stage('Build Docker image') {
             steps {
-                script {
-                    docker.build('my-data-app:latest')
-                }
+                sh '''
+                    docker build -t myapp:latest .
+                '''
             }
-        }
+}
     }
 
     post {
