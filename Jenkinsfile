@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone repo') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Install dependencies') {
             steps {
                 sh 'pip install -r requirements.txt'
